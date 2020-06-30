@@ -9,5 +9,5 @@
 
 ## urls to visit 
 
-1. 'dashboard/' takes you to dashboard.html
-2. 'dashboard/fillSlambook' takes you to fillSlambook.html
+1. `dashboard/` takes you to dashboard.html
+2. `dashboard/fillSlambook` takes you to fillSlambook.html
