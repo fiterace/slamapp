@@ -18,11 +18,15 @@ from django.urls import path, include
 from dashboard.views import HomePageView
 
 urlpatterns = [
-    path('', include('dashboard.urls')),
+#     path('', include('dashboard.urls')),
 
-    path('admin/', admin.site.urls),
+#     path('admin/', admin.site.urls),
 
     path('users/', include('users.urls')), # new
     # path('users/', include('django.contrib.auth.urls')), # new
     path('accounts/', include('allauth.urls')), # new
+  # naman's work
+    path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    path('dashboard/',include('dashboard.urls')),
 ]
