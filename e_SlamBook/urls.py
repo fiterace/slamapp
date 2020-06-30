@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import url, include
 from dashboard import views
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$',views.index,name='index'),
-    url(r'^dashboard/',include('dashboard.urls')),
+    path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    path('dashboard/',include('dashboard.urls')),
 ]

@@ -7,5 +7,6 @@ from django.urls import path
 app_name = 'dashboard'
 
 urlpatterns = [
-    url(r'^$',views.index,name='index'),
+    path('',views.index,name='index'),
+    path('fillSlambook/',views.form_view,name='form_view')
 ]
