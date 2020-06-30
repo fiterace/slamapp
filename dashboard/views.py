@@ -6,3 +6,12 @@ def index(request):
 
 def HomePageView(request, *args, **kwargs):
     return render(request, 'home.html', context={})
+
+def dashboardPageView(request):
+    return render(request, 'dashboard/examples/dashboard.html', context={})
+
+def basePageView(request):
+    return render(request, 'dashboard/layouts/base.html', context = {})
+
+def userPageView(request):
+    return render(request, 'dashboard/user.html') 
