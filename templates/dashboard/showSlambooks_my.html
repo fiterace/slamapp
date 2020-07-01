@@ -2,6 +2,10 @@
 
 {% block title %} Show Slambooks {% endblock title %} | All
 
+{% block stylesheets %}
+<link href="static/dashboard/css/paper_card.css" rel="stylesheet" />
+{% endblock stylesheets %}
+
 {% block sidebar %}
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
@@ -73,8 +77,6 @@
   </div>
   {% endblock sidebar %}
 
-{% for slam in slams %}
-
 <p>{{slam.senior}}</p>
 <p>{{slam.junior}}</p>
 <p>{{slam.ans1}}</p>
@@ -93,4 +95,3 @@
 <p>{{slam.ans14}}</p>
 <p>{{slam.ans15}}</p>
 <hr>
-{% endfor %}
