@@ -6,6 +6,7 @@ from dashboard.models import tableThree, senior_users
 def index(request):
     return render(request, 'dashboard/template.html')
 
+
 def HomePageView(request, *args, **kwargs):
     return render(request, 'home.html', context={})
 
@@ -17,6 +18,7 @@ def basePageView(request):
 
 def userPageView(request):
     return render(request, 'dashboard/user.html') 
+
 
 def showSlamBooks_all_PageView(request):
     seniors = senior_users.objects.all()
@@ -57,4 +59,3 @@ def form_view(request):
             obj.save()
             print("data saved")
     return render(request,'dashboard/fillSlambook.html',{'form':form})
-

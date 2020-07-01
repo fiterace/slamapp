@@ -13,5 +13,4 @@ urlpatterns = [
     # naman's work
     # path('',views.index,name='index'),
     path('fillSlambook/',views.form_view,name='form_view')
-
 ]
