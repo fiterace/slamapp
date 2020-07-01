@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
-LOGIN_REDIRECT_URL = 'home' # new
+LOGIN_REDIRECT_URL = 'user' # new
 LOGOUT_REDIRECT_URL = 'home' # new
 
 MIDDLEWARE = [
@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dashboard.middleware.AuthRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'e_SlamBook.urls'

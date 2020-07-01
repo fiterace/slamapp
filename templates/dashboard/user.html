@@ -80,16 +80,17 @@
       <div class="col-md-4">
         <div class="card card-user">
           <div class="image">
-            <img src="../assets/img/damir-bosnjak.jpg" alt="...">
+            <img src="static/dashboard/img/damir-bosnjak.jpg" alt="...">
           </div>
+          <!-- Personal Profile -->
           <div class="card-body">
             <div class="author">
               <a href="#">
-                <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                <h5 class="title">Chet Faker</h5>
+                <img class="avatar border-gray" src="static/dashboard/img/mike.jpg" alt="...">
+                <h5 class="title">{{user.first_name}} {{user.last_name}}</h5>
               </a>
               <p class="description">
-                @chetfaker
+                @{{user.username}}
               </p>
             </div>
             <p class="description text-center">
@@ -115,6 +116,9 @@
             </div>
           </div>
         </div>
+        <!-- End Personal Profile -->
+
+        <!-- Slambook filled by/ You filled Slambooks of -->
         <div class="card">
           <div class="card-header">
             <h4 class="card-title">Team Members</h4>
@@ -125,7 +129,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="static/dashboard/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-md-7 col-7">
@@ -142,7 +146,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="static/dashboard/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-md-7 col-7">
@@ -159,7 +163,7 @@
                 <div class="row">
                   <div class="col-md-2 col-2">
                     <div class="avatar">
-                      <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                      <img src="static/dashboard/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                   </div>
                   <div class="col-ms-7 col-7">

@@ -19,3 +19,7 @@ class tableThree(models.Model):
     ans13 = models.CharField(max_length=1000)
     ans14 = models.CharField(max_length=1000)
     ans15 = models.CharField(max_length=1000)
+
+class senior_users(models.Model):
+    email = models.CharField(max_length=200)
+    name = models.CharField(max_length=264, default="NA")

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from dashboard.views import HomePageView
+from dashboard import views
 
 urlpatterns = [
     path('', include('dashboard.urls')),
@@ -25,4 +26,8 @@ urlpatterns = [
     path('users/', include('users.urls')), # new
     # path('users/', include('django.contrib.auth.urls')), # new
     path('accounts/', include('allauth.urls')), # new
+    # naman's work
+    # path('admin/', admin.site.urls),
+    path('',views.index,name='index'),
+    # path('dashboard/',include('dashboard.urls')),
 ]
