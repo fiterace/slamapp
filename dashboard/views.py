@@ -25,7 +25,12 @@ def showSlamBooks_all_PageView(request):
     return render(request, 'dashboard/showSlamBooks_all.html', {'seniors':seniors})
 
 # def showSlamBooks_my_PageView(request):
-#     slams = 
+#     slams = tableThree.objects.all()   # <---- this is to be changed!!!
+#     return render(request, 'dashboard/showSlambook_my.html')
+
+def show_slambook_entry_PageView(request):
+    slam = tableThree.objects.get(id = 1) # <----- this is temporary!!!
+    return render(request, 'dashboard/show_slambook_entry.html', {'slam':slam})
 
  # naman's work
 def form_view(request):
