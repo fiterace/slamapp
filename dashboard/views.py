@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from . import forms
-from dashboard.models import tableThree
+from dashboard.models import tableThree, senior_users
 
 # Create your views here.
 def index(request):
     return render(request, 'dashboard/template.html')
-
 
 def HomePageView(request, *args, **kwargs):
     return render(request, 'home.html', context={})
@@ -18,6 +17,13 @@ def basePageView(request):
 
 def userPageView(request):
     return render(request, 'dashboard/user.html') 
+
+def showSlamBooks_all_PageView(request):
+    seniors = senior_users.objects.all()
+    return render(request, 'dashboard/showSlamBooks_all.html', {'seniors':seniors})
+
+# def showSlamBooks_my_PageView(request):
+#     slams = 
 
  # naman's work
 def form_view(request):
