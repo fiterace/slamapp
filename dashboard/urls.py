@@ -1,12 +1,11 @@
-from django.contrib import admin
-from django.conf.urls import url, include
-from dashboard import views
 from django.urls import path
 
-# TEMPLATE TAGGING
-app_name = 'dashboard'
+from .views import HomePageView, dashboardPageView, basePageView, userPageView
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('', HomePageView, name='home'),
+    path('dashboard', dashboardPageView, name="dashboard"),
+    path('base', basePageView, name="base"),
+    path('user', userPageView, name="user"),
     path('fillSlambook/',views.form_view,name='form_view')
 ]
