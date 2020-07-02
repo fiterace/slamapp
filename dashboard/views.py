@@ -31,7 +31,7 @@ def show_slambook_entry_PageView(request):
     return render(request, 'dashboard/show_slambook_entry.html', {'slam':slam})
 
  # naman's work
-def form_view(request):
+def fillSlambook_PageView(request):
     form = forms.fillSlambook()
     if request.method == 'POST':
         form = forms.fillSlambook(request.POST)
@@ -62,4 +62,3 @@ def form_view(request):
             obj.save()
             print("data saved")
     return render(request,'dashboard/fillSlambook.html',{'form':form})
-
