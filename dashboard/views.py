@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import forms
 from dashboard.models import tableThree, senior_users
+from django.views.generic import View,TemplateView,ListView,DetailView
 
 # Create your views here.
 def index(request):
@@ -20,21 +21,21 @@ def userPageView(request):
     return render(request, 'dashboard/user.html') 
 
 
-def showSlamBooks_all_PageView(request):
-    seniors = senior_users.objects.all()
-    colors = {"#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"}
-    zipped = list(zip(seniors, colors))
-    print(zipped)
-    print(seniors)
-    return render(request, 'dashboard/showSlamBooks_all.html', {'zip':zipped})
+# def showSlamBooks_all_PageView(request):
+#     seniors = senior_users.objects.all()
+#     colors = {"#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"}
+#     zipped = list(zip(seniors, colors))
+#     print(zipped)
+#     print(seniors)
+#     return render(request, 'dashboard/showSlamBooks_all.html', {'zip':zipped})
 
 # def showSlamBooks_my_PageView(request):
 #     slams = tableThree.objects.all()   # <---- this is to be changed!!!
 #     return render(request, 'dashboard/showSlambook_my.html')
 
-def show_slambook_entry_PageView(request):
-    slam = tableThree.objects.get(id = 1) # <----- this is temporary!!!
-    return render(request, 'dashboard/show_slambook_entry.html', {'slam':slam})
+# def show_slambook_entry_PageView(request):
+#     slam = tableThree.objects.get(id = 1) # <----- this is temporary!!!
+#     return render(request, 'dashboard/show_slambook_entry.html', {'slam':slam})
 
  # naman's work
 def fillSlambook_PageView(request):
@@ -68,3 +69,22 @@ def fillSlambook_PageView(request):
             obj.save()
             print("data saved")
     return render(request,'dashboard/fillSlambook.html',{'form':form})
+
+class showSlambooksAll(ListView):
+    template_name='dashboard/showSlamBooks_all.html'
+    print("hello")
+    colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
+    queryset = list(zip(senior_users.objects.all(), colors))
+    context_object_name = 'zip'
+    print(queryset)
+
+class showSlambooksMyListView(ListView):
+    template_name='dashboard/showSlamBooks_my.html'
+    print("hello")
+    colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
+    queryset = list(zip(tableThree.objects.all(), colors))
+    context_object_name = 'zip_slam'
+
+class showSlambookMyDetailView(DetailView):
+    model = tableThree
+    template_name='dashboard/show_slambook_entry.html'
