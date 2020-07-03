@@ -18,4 +18,4 @@ class fillSlambook(forms.Form):
     ans13 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 13 goes here")
     ans14 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 14 goes here")
     ans15 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 15 goes here")
-    botcatcher = forms.CharField(required=False,widget=forms.HiddenInput,validators=[validators.MaxLengthValidator(0)])
+    # botcatcher = forms.CharField(required=False,widget=forms.HiddenInput,validators=[validators.MaxLengthValidator(0)])

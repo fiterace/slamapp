@@ -20,7 +20,11 @@ def userPageView(request):
 
 def showSlamBooks_all_PageView(request):
     seniors = senior_users.objects.all()
-    return render(request, 'dashboard/showSlamBooks_all.html', {'seniors':seniors})
+    colors = {"#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"}
+    zipped = list(zip(seniors, colors))
+    print(zipped)
+    print(seniors)
+    return render(request, 'dashboard/showSlamBooks_all.html', {'zip':zipped})
 
 # def showSlamBooks_my_PageView(request):
 #     slams = tableThree.objects.all()   # <---- this is to be changed!!!

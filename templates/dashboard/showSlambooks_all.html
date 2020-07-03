@@ -3,31 +3,26 @@
 {% block title %} Fill Slams {% endblock title %}
 
 {% block stylesheets %}
-<link href="static/dashboard/css/slam_card.css" rel="stylesheet" />
-<!-- <link href="static\dashboard\css\litsoc_card.css" rel="stylesheet"/> -->
+  <link href="static/dashboard/css/slam_card.css" rel="stylesheet" />
+  <link href="static/dashboard/css/style_border.css" rel="stylesheet"/>
 {% endblock stylesheets %}
 
 {% block sidebar %}
-<div class="collapse navbar-collapse sidebar" data-color="white" data-active-color="danger" data-active-color="danger" id="mobile_sidebar">
+<div class="sidebar" data-color="white" data-active-color="danger" data-active-color="danger" id="mobile_sidebar">
     <div class="logo">
       <a href="" class="simple-text logo-mini">
         <div class="logo-image-small">
           <img src="static/dashboard/img/book.png">
         </div>
-        <!-- <p>CT</p> -->
       </a>
       <a href="https://www.creative-tim.com" class="simple-text logo-normal">
         SlamApp
-        <!-- <div class="logo-image-big">
-          <img src="static/dashboard/img/logo-big.png">
-        </div> -->
       </a>
     </div>
     <div class="sidebar-wrapper" style="overflow: hidden;">
       <ul class="nav">
         <li class="active">
           <a href={% url "show_slambook_entry" %}>
-            <!-- <i><img src="https://img.icons8.com/cotton/32/000000/ball-point-pen.png"/></i> -->
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="32" height="32"
             viewBox="0 0 172 172"
@@ -52,7 +47,7 @@
           </a>
         </li>
       </ul>
-      <div><img src="static/dashboard/img/litsoc.png" style="width: 100%; display: block; margin: auto;"/></div>
+      {% include "dashboard/includes/litsoc_logo.html" %}
     </div>
   </div>
   {% endblock sidebar %}
@@ -61,24 +56,28 @@
 
 {% block content %}
   <ol class="articles" style="padding-inline-start: 20px;">
-        {% for senior in seniors %}
+        {% for senior, color in zip %}
 
-        <li class="articles__article" style="--animation-order:1"><a class="articles__link">
-          <div class="articles__content articles__content--lhs">
-            <h2 class="articles__title">{{senior.name}}</h2>
-            <div class="articles__footer">
-              <p>Cakes</p>
-              <time>1 Jan 2020</time>
+        <li class="articles__article" style="--animation-order:1">
+          <a class="articles__link">
+            <div class="articles__content articles__content--lhs" style="background-color: {{color}};">
+              <h2 class="articles__title">{{senior.name}}, {{color}}</h2>
+              <div class="articles__footer">
+                <p>Cakes</p>
+                <time>1 Jan 2020</time>
+              </div>
             </div>
-          </div>
-          <div class="articles__content articles__content--rhs" aria-hidden="true">
-            <h2 class="articles__title">{{senior.name}}</h2>
-            <div class="articles__footer">
-              <p>Cakes</p>
-              <time>1 Jan 2020</time>
+            <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {{color}};">
+              <h2 class="articles__title">{{senior.name}}</h2>
+              <div class="articles__footer">
+                <p>Cakes</p>
+                <time>1 Jan 2020</time>
+              </div>
             </div>
-          </div></a></li>
+          </a>
+        </li>
 
         {% endfor %}
     </ol>
+    
 {% endblock content %}

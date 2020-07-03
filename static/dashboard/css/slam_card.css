@@ -1,9 +1,12 @@
 :root {
     --base-grid: 8px;
-    --colour-body-background: #d84c6e;
-    --colour-background: #fff;
+    /* --colour-body-background: #d84c6e; */
+    --colour-body-background: #fcf9ea;
+    /* --colour-background: #fff; */
+    --colour-background: #152d51;
     --colour-background-folded: #f5f5f5;
-    --colour-background-stripes: rgba(255,255,255,.5);
+    /* --colour-background-stripes: rgba(255,255,255,.5); */
+    --colour-background-stripes: #152d5191;
     --colour-text: #1a1a1a;
   }
   
