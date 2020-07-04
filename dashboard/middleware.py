@@ -9,5 +9,5 @@ class AuthRequiredMiddleware(object):
         
     def process_request(self, request):
         if not request.user.is_authenticated():
-            return HttpResponseRedirect(reverse('home')) # or http response
+            return HttpResponseRedirect('home') # or http response
         return None

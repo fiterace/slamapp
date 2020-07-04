@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
-LOGIN_REDIRECT_URL = 'user' # new
+LOGIN_REDIRECT_URL = 'myapp:user' # new
 LOGOUT_REDIRECT_URL = 'home' # new
 
 MIDDLEWARE = [

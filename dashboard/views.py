@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from . import forms
 from dashboard.models import tableThree, senior_users
 from django.views.generic import View,TemplateView,ListView,DetailView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def index(request):
@@ -17,6 +19,7 @@ def dashboardPageView(request):
 def basePageView(request):
     return render(request, 'dashboard/layouts/base.html', context = {})
 
+@login_required
 def userPageView(request):
     return render(request, 'dashboard/user.html') 
 
@@ -70,21 +73,19 @@ def fillSlambook_PageView(request):
             print("data saved")
     return render(request,'dashboard/fillSlambook.html',{'form':form})
 
-class showSlambooksAll(ListView):
+class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'
-    print("hello")
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
     queryset = list(zip(senior_users.objects.all(), colors))
     context_object_name = 'zip'
-    print(queryset)
 
-class showSlambooksMyListView(ListView):
+class showSlambooksMyListView(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_my.html'
-    print("hello")
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
     queryset = list(zip(tableThree.objects.all(), colors))
-    context_object_name = 'zip_slam'
+    context_object_name = 'zip'
 
-class showSlambookMyDetailView(DetailView):
+class showSlambookMyDetailView(LoginRequiredMixin,DetailView):
     model = tableThree
     template_name='dashboard/show_slambook_entry.html'
+    context_object_name= 'tableThree'
