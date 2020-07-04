@@ -21,7 +21,7 @@
     <div class="sidebar-wrapper" style="overflow: hidden;">
       <ul class="nav">
         <li>
-          <a href="{% url 'myapp:fill_slambook_entry' %}">
+          <a href="{% url 'myapp:showSlambooks_all' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="32" height="32"
             viewBox="0 0 172 172"
@@ -65,9 +65,13 @@
               <a href="#">
                 <img class="avatar border-gray" src="static/dashboard/img/mike.jpg" alt="...">
                 <h5 class="title">{{user.first_name}} {{user.last_name}}</h5>
+                <!-- <p>{{user.family_name}}</p> -->
               </a>
               <p class="description">
                 @{{user.username}}
+              </p>
+              <p>
+                {{user.email}}
               </p>
             </div>
             <p class="description text-center">
