@@ -1,5 +1,7 @@
 {% load socialaccount %}
+{% load static %}
 
+{% comment %}
 <h1>Django Login Mega-Tutorial</h1>
 {% if user.is_authenticated %}
 <p>Welcome {{ user.username }} !!!</p>
@@ -7,3 +9,194 @@
 {% else %}
 <p><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></p>
 {% endif %}
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Night Train Ride Animation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="{% static 'dashboard/css/train.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="lamb a a-3"></div>
+  <div class="chandelier">
+    <div class="chandelier-case a a-3"></div>
+    <div class="chandelier-details">
+      <div class="chandelier-detail a a-2"></div>
+      <div class="chandelier-detail a a-2"></div>
+      <div class="chandelier-detail a a-2"></div>
+      <div class="chandelier-detail a a-2"></div>
+      <div class="line a"></div>
+    </div>
+  </div>
+  <div class="container-back cont a-4"></div>
+  <div class="container-wrapper cont a-4">
+    <div class="way"></div>
+    <div class="moon"></div>
+    <div class="star-container">
+      <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+      <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+    </div>
+    <div class="night-wrapper">
+      <div class="night">
+        <div class="train">
+          <div class="train-link"></div>
+          <div class="train-coach">
+            <div class="train-mid">
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+            </div>
+            <div class="door"></div>
+            <div class="rollers">
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+            </div>
+          </div>
+        </div>
+        <div class="train">
+          <div class="train-link"></div>
+          <div class="train-coach">
+            <div class="train-mid">
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+            </div>
+            <div class="door"></div>
+            <div class="rollers">
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="night">
+        <div class="train">
+          <div class="train-link"></div>
+          <div class="train-coach">
+            <div class="train-mid">
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+            </div>
+            <div class="door"></div>
+            <div class="rollers">
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+            </div>
+          </div>
+        </div>
+        <div class="train">
+          <div class="train-link"></div>
+          <div class="train-coach">
+            <div class="train-mid">
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+              <div class="window">
+                <div class="window-line"></div>
+              </div>
+            </div>
+            <div class="door"></div>
+            <div class="rollers">
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+              <div class="roller"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+<div class="text_sp">
+  <!-- <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br> -->
+  <h2><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></h2>
+</div>
+</body>
+</html>

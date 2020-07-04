@@ -21,7 +21,7 @@ class tableThree(models.Model):
     ans15 = models.CharField(max_length=1000)
 
 class senior_users(models.Model):
-    email = models.CharField(max_length=200, default="b16000@students.iitmani.ac.in")
+    email = models.CharField(max_length=200, default="b16000@students.iitmandi.ac.in")
     name = models.CharField(max_length=264, default="Cool Senior")
     tag_line = models.CharField(max_length=264, default="I am Cool...")
     nick_name = models.CharField(max_length=264, default="stud")

@@ -26,6 +26,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), # new
     # naman's work
     # path('admin/', admin.site.urls),
-    path('',views.index,name='index'),
+    path('',views.index, name='index'),
     # path('dashboard/',include('dashboard.urls')),
 ]

@@ -1,17 +1,18 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from . import forms
 from dashboard.models import tableThree, senior_users
 from django.views.generic import View,TemplateView,ListView,DetailView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.conf import settings
 
 # Create your views here.
 def index(request):
     return render(request, 'dashboard/template.html')
 
-
 def HomePageView(request, *args, **kwargs):
+    if request.user.is_authenticated:
+        return redirect(settings.LOGIN_REDIRECT_URL) 
     return render(request, 'home.html', context={})
 
 def dashboardPageView(request):
@@ -76,12 +77,16 @@ def fillSlambook_PageView(request):
 
 class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'
-    colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
+
+    # print("hello")
+    colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#f2aaaa", "#dbc6eb", "#bbf1cb", "#abc2e8", "b4f2e1"] 
     queryset = list(zip(senior_users.objects.all(), colors))
     context_object_name = 'zip'
 
+
 class showSlambooksMyListView(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_my.html'
+
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
     queryset = list(zip(tableThree.objects.all(), colors))
     context_object_name = 'zip'
@@ -90,3 +95,4 @@ class showSlambookMyDetailView(LoginRequiredMixin,DetailView):
     model = tableThree
     template_name='dashboard/show_slambook_entry.html'
     context_object_name= 'tableThree'
+
