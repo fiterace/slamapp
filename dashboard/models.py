@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class tableThree(models.Model):
-    senior = models.CharField(max_length=264)
+    senior = models.ForeignKey('dashboard.senior_users', related_name='entries',on_delete=models.CASCADE)
     junior = models.CharField(max_length=264)
     ans1 = models.CharField(max_length=1000)
     ans2 = models.CharField(max_length=1000)

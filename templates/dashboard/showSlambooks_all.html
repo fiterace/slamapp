@@ -22,7 +22,7 @@
     <div class="sidebar-wrapper" style="overflow: hidden;">
       <ul class="nav">
         <li class="active">
-          <a href={% url "showSlambooks_all" %}>
+          <a href="{% url 'myapp:fill_slambook_entry' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="32" height="32"
             viewBox="0 0 172 172"
@@ -31,14 +31,14 @@
             <p style="font-size: 17px;">Fill Slams</p>
           </a>
         </li>
-        <li >
-          <a href={% url "user" %}>
+        <li>
+          <a href="{% url 'myapp:user' %}">
             <i><img src="https://img.icons8.com/color/48/000000/login-as-user.png"/></i>
             <p style="font-size: 17px;">User Profile</p>
           </a>
         </li>
         <li class="">
-          <a href={% url "showSlambooks_my"}>
+          <a href="{% url 'myapp:showSlambooks_my' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
               width="30" height="30"
               viewBox="0 0 172 172"

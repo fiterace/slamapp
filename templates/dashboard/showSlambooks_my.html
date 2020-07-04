@@ -22,7 +22,7 @@
     <div class="sidebar-wrapper" style="overflow: hidden;">
       <ul class="nav">
         <li class="">
-          <a href={% url "showSlambooks_all" %}>
+          <a href="{% url 'myapp:showSlambooks_all' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="32" height="32"
             viewBox="0 0 172 172"
@@ -32,13 +32,13 @@
           </a>
         </li>
         <li>
-          <a href={% url "user" %}>
+          <a href="{% url 'myapp:user' %}">
             <i><img src="https://img.icons8.com/color/48/000000/login-as-user.png"/></i>
             <p>User Profile</p>
           </a>
         </li>
         <li class="active">
-          <a href={% url "showSlambooks_my"}>
+          <a href="{% url 'myapp:showSlambooks_my' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
               width="30" height="30"
               viewBox="0 0 172 172"
@@ -52,21 +52,31 @@
   </div>
   {% endblock sidebar %}
 
-<p>{{slam.senior}}</p>
-<p>{{slam.junior}}</p>
-<p>{{slam.ans1}}</p>
-<p>{{slam.ans2}}</p>
-<p>{{slam.ans2}}</p>
-<p>{{slam.ans3}}</p>
-<p>{{slam.ans4}}</p>
-<p>{{slam.ans5}}</p>
-<p>{{slam.ans6}}</p>
-<p>{{slam.ans7}}</p>
-<p>{{slam.ans9}}</p>
-<p>{{slam.ans10}}</p>
-<p>{{slam.ans11}}</p>
-<p>{{slam.ans12}}</p>
-<p>{{slam.ans13}}</p>
-<p>{{slam.ans14}}</p>
-<p>{{slam.ans15}}</p>
-<hr>
+{% block content %}
+  <br>
+  <ol class="articles" style="padding-inline-start: 20px;">
+    {% for entry,color in zip_slam %}
+      {% if user.email == entry.senior.email %}
+        <li class="articles__article" style="--animation-order:1">
+          <a href="{% url 'myapp:entry' pk=entry.pk %}" class="articles__link">
+            <div class="articles__content articles__content--lhs" style="background-color: {{color}};">
+              <h2 class="articles__title">{{entry.junior}}, , {{color}}, {{user.email}}</h2>
+              <div class="articles__footer">
+                <p>Cakes</p>
+                <time>1 Jan 2020</time>
+              </div>
+            </div>
+            <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {{color}};">
+              <h2 class="articles__title"></h2>
+              <div class="articles__footer">
+                <p>Cakes</p>
+                <time>1 Jan 2020</time>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+    
+{% endblock content %}
