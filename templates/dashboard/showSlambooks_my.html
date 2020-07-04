@@ -21,7 +21,7 @@
     </div>
     <div class="sidebar-wrapper" style="overflow: hidden;">
       <ul class="nav">
-        <li class="">
+        <li class="active">
           <a href="{% url 'myapp:showSlambooks_all' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="32" height="32"
@@ -37,7 +37,7 @@
             <p style="font-size: 17px;">User Profile</p>
           </a>
         </li>
-        <li class="active">
+        <li class="">
           <a href="{% url 'myapp:showSlambooks_my' %}">
             <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
               width="30" height="30"
@@ -58,6 +58,7 @@
   <br>
   <ol class="articles" style="padding-inline-start: 20px;">
         {% for entry, color in zip %}
+
           {% if user.email == entry.senior.email %}
             <li class="articles__article" style="--animation-order:1">
               <a href="{% url 'myapp:showentry' pk=entry.pk %}" class="articles__link">
