@@ -1,16 +1,18 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from . import forms
 from dashboard.models import tableThree, senior_users
 from django.views.generic import View,TemplateView,ListView,DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.conf import settings
 
 # Create your views here.
 def index(request):
     return render(request, 'dashboard/template.html')
 
-
 def HomePageView(request, *args, **kwargs):
+    if request.user.is_authenticated:
+        return redirect(settings.LOGIN_REDIRECT_URL) 
     return render(request, 'home.html', context={})
 
 def dashboardPageView(request):
