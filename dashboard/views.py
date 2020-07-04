@@ -3,7 +3,8 @@ from . import forms
 from dashboard.models import tableThree, senior_users
 from django.views.generic import View,TemplateView,ListView,DetailView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 
 # Create your views here.
 def index(request):
