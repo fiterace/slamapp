@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'dashboard/css/pagination.css' %}">
 {% endblock stylesheets %}
 
-{% block letter_status %} active {% endblock letter_status %}
+{% block letter_status %} active {% endblock %}
 
 {% block content %}
 <div class="wrapper">
@@ -24,6 +24,12 @@
 {% endblock content %}
 
 {% block scripts %}
-<script  src="{% static 'dashboard/js/pagination_senior.js' %}"></script>
+
+  {% if is_senior %}
+    <script  src="{% static 'dashboard/js/pagination_senior.js' %}"></script>
+  {% else %}
+    <script  src="{% static 'dashboard/js/pagination_junior.js' %}"></script>
+  {% endif %}
+
 {% endblock scripts %}
 
