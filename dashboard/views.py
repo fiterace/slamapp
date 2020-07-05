@@ -85,7 +85,6 @@ def fillSlambook_PageView(request):
 
 class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'
-
     # print("hello")
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#f2aaaa", "#dbc6eb", "#bbf1cb", "#abc2e8", "b4f2e1"] 
     queryset = list(zip(senior_users.objects.all(), colors))
@@ -94,7 +93,6 @@ class showSlambooksAll(LoginRequiredMixin,ListView):
 
 class showSlambooksMyListView(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_my.html'
-
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
     queryset = list(zip(tableThree.objects.all(), colors))
     context_object_name = 'zip'

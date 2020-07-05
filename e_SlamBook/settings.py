@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
-LOGIN_REDIRECT_URL = 'myapp:user' # new
+LOGIN_REDIRECT_URL = 'myapp:letter' # new
 LOGOUT_REDIRECT_URL = 'home' # new
 
 ACCOUNT_LOGOUT_ON_GET = True # to disable intermediate signout page in Django allauth

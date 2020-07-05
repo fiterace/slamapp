@@ -63,6 +63,7 @@
               <p style="font-size: 17px;">User Profile</p>
             </a>
           </li>
+          {% if is_senior %}
           <li class="{% block slamsReceived_status %} {% endblock %}">
             <a href="{% url 'myapp:showSlambooks_my' %}">
               <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -72,6 +73,7 @@
               <p style="font-size: 17px;">Slams Received</p>
             </a>
           </li>
+          {% endif %}
         </ul>
         {% include "dashboard/includes/litsoc_logo.html" %}
       </div>
