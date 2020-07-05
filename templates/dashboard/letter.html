@@ -8,13 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <link href="static/dashboard/css/style_border.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'dashboard/css/pagination.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&family=Mali&display=swap" rel="stylesheet">
 {% endblock stylesheets %}
+
+{% block extraHead %}
+<style>
+  @media screen and (max-width: 500px) {
+    #avatar_container {
+      padding: 0px;
+    }
+  }
+</style>
+{% endblock %}
 
 {% block letter_status %} active {% endblock %}
 
 {% block content %}
 <div class="wrapper">
-    <div class="pages"> <!-- Pages--> </div>
+    <div class="pages" style="font-family: 'Josefin Slab', serif;">
+             <!-- Pages--> 
+      </div>
+    <br>
     <div class="paginator">
       <button type="button" class="arrow-left" id="prev_button"> prev </button>
       <div class="page-nums"></div>
@@ -23,6 +37,7 @@
   </div>
 {% endblock content %}
 
+{% comment %}
 {% block scripts %}
 
   {% if is_senior %}
@@ -32,4 +47,4 @@
   {% endif %}
 
 {% endblock scripts %}
-
+{% endcomment %}
