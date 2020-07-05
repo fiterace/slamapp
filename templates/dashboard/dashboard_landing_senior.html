@@ -1,0 +1,29 @@
+{% extends 'dashboard/layouts/base.html' %}
+{% load static %}
+
+{% block title %} Fill Slam {% endblock title %}
+
+{% block stylesheets %}
+    <link href="static/dashboard/css/paper_card.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="static/dashboard/css/style_border.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'dashboard/css/pagination.css' %}">
+{% endblock stylesheets %}
+
+{% block letter_status %} active {% endblock letter_status %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="pages"> <!-- Pages--> </div>
+    <div class="paginator">
+      <button type="button" class="arrow-left" id="prev_button"> prev </button>
+      <div class="page-nums"></div>
+      <button type="button" class="arrow-right" id="next_button"> next </button>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+<script  src="{% static 'dashboard/js/pagination_senior.js' %}"></script>
+{% endblock scripts %}
+

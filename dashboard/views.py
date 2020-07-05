@@ -25,6 +25,14 @@ def basePageView(request):
 def userPageView(request):
     return render(request, 'dashboard/user.html') 
 
+def letterPageView(request):
+    seniors = senior_users.objects.all()
+    # if request.user.email is in seniors.email:
+    print(seniors.filter(email=request.user.email).exists())
+    if (seniors.filter(email=request.user.email).exists()):
+        return render (request, 'dashboard/dashboard_landing_senior.html', context={"seniors":seniors})
+    return render (request, 'dashboard/dashboard_landing_junior.html', context={"seniors":seniors})
+
 
 # def showSlamBooks_all_PageView(request):
 #     seniors = senior_users.objects.all()

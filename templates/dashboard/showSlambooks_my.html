@@ -1,4 +1,5 @@
 {% extends 'dashboard/layouts/base.html' %}
+{% load static %}
 
 {% block title %} Fill Slams {% endblock title %}
 
@@ -64,8 +65,8 @@
               <a href="{% url 'myapp:showentry' pk=entry.pk %}" class="articles__link">
                 <div class="articles__content articles__content--lhs" style="background-color: {{color}};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
-                  -webkit-line-clamp: 4; /* number of lines to show */
-                  -webkit-box-orient: vertical;">{{entry.ans1}}</p>
+                  -webkit-line-clamp: 5; /* number of lines to show */
+                  -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>
                   <p style="margin-bottom: 0px; text-align: right; font-size: 20px;  white-space: nowrap; 
   width: 240px; 
   overflow: hidden;
@@ -78,8 +79,8 @@
                 </div>
                 <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {{color}};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
-                  -webkit-line-clamp: 4; /* number of lines to show */
-                  -webkit-box-orient: vertical;">{{entry.ans1}}</p>
+                  -webkit-line-clamp: 5; /* number of lines to show */
+                  -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>
                   <p style="margin-bottom: 0px; text-align: right; font-size: 20px;  white-space: nowrap; 
   width: 240px; 
   overflow: hidden;

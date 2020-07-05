@@ -1,7 +1,7 @@
 from django.urls import path
 from dashboard import views
 
-from .views import HomePageView, dashboardPageView, basePageView, userPageView, showSlambookMyDetailView, showSlambooksMyListView, fillSlambook_PageView, showSlambooksAll
+from .views import *
 
 #template tagging
 app_name = 'myapp'
@@ -16,4 +16,5 @@ urlpatterns = [
     path('showSlambooks_my', showSlambooksMyListView.as_view(), name="showSlambooks_my"),
     path('showentry/<int:pk>', showSlambookMyDetailView.as_view(), name="showentry"),
     path('fill_slambook_entry', fillSlambook_PageView, name='fill_slambook_entry'),
+    path('letter', letterPageView, name="letter"),
 ]
