@@ -14,5 +14,8 @@
 
 ## What's next ?
 - [x] Basic Slam Book app
+- [ ] Add custom slambook creation ("Create Slam") feature
+- [ ] Add notification feature
+- [ ] Add invite link sending feature
 - [ ] Add Memories (image/video file) uploading feature
 - [ ] Add Slam Book Download feature
