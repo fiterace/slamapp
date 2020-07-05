@@ -11,3 +11,8 @@
 
 1. `dashboard/` takes you to dashboard.html
 2. `dashboard/fillSlambook` takes you to fillSlambook.html
+
+## What's next ?
+- [x] Basic Slam Book app
+- [ ] Add Memories (image/video file) uploading feature
+- [ ] Add Slam Book Download feature
