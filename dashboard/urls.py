@@ -15,6 +15,7 @@ urlpatterns = [
     path('showSlambooks_all', showSlambooksAll.as_view(), name="showSlambooks_all"),
     path('showSlambooks_my', showSlambooksMyListView.as_view(), name="showSlambooks_my"),
     path('showentry/<int:pk>', showSlambookMyDetailView.as_view(), name="showentry"),
-    path('fill_slambook_entry', fillSlambook_PageView, name='fill_slambook_entry'),
+    path('fillSlambook/<int:pk>', fillSlambook_PageView, name='fillSlambook'),
+    path('accounts/login/',HomePageView),
     path('letter', letterPageView, name="letter"),
 ]
