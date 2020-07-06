@@ -15,10 +15,11 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - CSS Night Train Ride Animation</title>
+  <title>SlamApp | Home</title>
+  <link rel="icon" type="image/png" href="static/dashboard/img/book.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link href="{% static 'dashboard/css/train.css' %}" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -191,12 +192,18 @@
   </div>
 </div>
 <!-- partial -->
-<div class="text_sp">
+<div class="text_sp" style="font-family: 'Special Elite', cursive;">
   <!-- <br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br> -->
-  <h2><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></h2>
+  <p style="text-align: center; margin: 10px;">Four years ago, you boarded a train,
+    And hence began an unforgettable journey.
+    Now that you would change trains soon,
+    Let's look back at this wonderful train ride,
+    And smile at those silly but precious memories.</p>
+  <h2 style="text-align: center; margin: 10px;"> <a href="{% provider_login_url 'google' %}">Take a Leap!</a></h2>
+  <p style="text-align: center; margin: 10px;">(PS: Don't forget to use your college email-id as ticket ;) )</p>
 </div>
 </body>
 </html>
