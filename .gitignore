@@ -1,5 +1,5 @@
 .vscode
 users/db.sqlite3
-dashboard/__pycache__
-dashboard/migrations/__pycache__
-e_Slambook/__pycache__
+dashboard/__pycache__/
+dashboard/migrations/__pycache__/
+e_Slambook/__pycache__/

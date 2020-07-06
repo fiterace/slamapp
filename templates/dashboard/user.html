@@ -1,10 +1,10 @@
 {% extends 'dashboard/layouts/base.html' %}
 
 {% block title %} User Profile {% endblock title %}
-
+{% load static %}
 {% block stylesheets %}
-  <link href="static/dashboard/css/style_border.css" rel="stylesheet"/>
-  <link href="static/dashboard/css/sidebar.css" rel="stylesheet"/>
+  <link href="{% static 'dashboard/css/style_border.css' %}" rel="stylesheet"/>
+  <link href="{% static 'dashboard/css/sidebar.css' %}" rel="stylesheet"/>
 {% endblock stylesheets %}
 {% block userProfile_status %} active {% endblock %}
 
@@ -14,13 +14,13 @@
     <div class="col-md-4">
       <div class="card card-user">
         <div class="image">
-          <img src="static/dashboard/img/damir-bosnjak.jpg" alt="...">
+          <img src="{% static 'dashboard/img/damir-bosnjak.jpg" alt="...">
         </div>
         <!-- Personal Profile -->
         <div class="card-body">
           <div class="author">
             <a href="#">
-              <img class="avatar border-gray" src="static/dashboard/img/mike.jpg" alt="...">
+              <img class="avatar border-gray" src="{% static 'dashboard/img/mike.jpg' %}" alt="...">
               <h5 class="title">{{user.first_name}} {{user.last_name}}</h5>
               <!-- <p>{{user.family_name}}</p> -->
             </a>
@@ -67,7 +67,7 @@
               <div class="row">
                 <div class="col-md-2 col-2">
                   <div class="avatar">
-                    <img src="static/dashboard/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    <img src="{% static 'dashboard/img/faces/ayo-ogunseinde-2.jpg' %}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                   </div>
                 </div>
                 <div class="col-md-7 col-7">
@@ -84,7 +84,7 @@
               <div class="row">
                 <div class="col-md-2 col-2">
                   <div class="avatar">
-                    <img src="static/dashboard/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    <img src="{% static 'dashboard/img/faces/joe-gardner-2.jpg' %}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                   </div>
                 </div>
                 <div class="col-md-7 col-7">
@@ -101,7 +101,7 @@
               <div class="row">
                 <div class="col-md-2 col-2">
                   <div class="avatar">
-                    <img src="static/dashboard/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    <img src="{% static 'dashboard/img/faces/clem-onojeghuo-2.jpg' %}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                   </div>
                 </div>
                 <div class="col-ms-7 col-7">
