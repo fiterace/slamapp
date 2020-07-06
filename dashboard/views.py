@@ -60,7 +60,7 @@ def fillSlambook_PageView(request):
 
         if form.is_valid():
             print("all good")
-            junior="naman" # must be taken from login
+            junior=request.user.email # must be taken from login
             senior="naman" # must be taken from login
             obj = tableThree(
                 junior=junior,
@@ -95,6 +95,12 @@ class showSlambooksAll(LoginRequiredMixin,ListView):
     context_object_name = 'zip'
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['is_senior'] = senior_users.objects.filter(email=self.request.user.email).exists()
+        return context
 
 
 class showSlambooksMyListView(LoginRequiredMixin,ListView, UserPassesTestMixin):
@@ -104,6 +110,12 @@ class showSlambooksMyListView(LoginRequiredMixin,ListView, UserPassesTestMixin):
     context_object_name = 'zip'
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['is_senior'] = senior_users.objects.filter(email=self.request.user.email).exists()
+        return context
 
 class showSlambookMyDetailView(LoginRequiredMixin,DetailView):
     model = tableThree
@@ -111,4 +123,10 @@ class showSlambookMyDetailView(LoginRequiredMixin,DetailView):
     context_object_name= 'tableThree'
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['is_senior'] = senior_users.objects.filter(email=self.request.user.email).exists()
+        return context
 
