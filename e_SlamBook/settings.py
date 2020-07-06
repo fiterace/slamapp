@@ -26,7 +26,7 @@ SECRET_KEY = 'd9)dhy6f!^w$74&0dp7pvtt(3gajj$^svlxxm&^mom5rbd^(3o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['slamapp.pythonanywhere.com']
 
 
 # Application definition
