@@ -1868,6 +1868,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     height: 27px;
     vertical-align: middle;
     outline: 0;
+    float: right;
     cursor: pointer; }
     .navbar .navbar-toggler .navbar-toggler-bar.navbar-kebab {
       width: 3px;
