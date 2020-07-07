@@ -21,6 +21,11 @@ def dashboardPageView(request):
 def basePageView(request):
     return render(request, 'dashboard/layouts/base.html', context = {})
 
+def hiddenAdminPageView(request):
+    if request.user.is_authenticated:
+        return redirect(settings.LOGIN_REDIRECT_URL) 
+    return render(request, 'hiddenAdmin.html', context={})
+
 @login_required
 def userPageView(request):
     if (senior_users.objects.filter(email=request.user.email).exists()):

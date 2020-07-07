@@ -16,6 +16,7 @@ urlpatterns = [
     path('showSlambooks_my', showSlambooksMyListView.as_view(), name="showSlambooks_my"),
     path('showentry/<int:pk>', showSlambookMyDetailView.as_view(), name="showentry"),
     path('fillSlambook/<int:pk>', fillSlambook_PageView, name='fillSlambook'),
-    path('accounts/login/',HomePageView),
+    # path('accounts/login/',HomePageView), #                                             <--- This is removed temporarily for development purpose!
     path('letter', letterPageView, name="letter"),
+    path("hiddenAdmin", hiddenAdminPageView, name="hiddenAdmin"),
 ]
