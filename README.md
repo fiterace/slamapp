@@ -35,7 +35,7 @@ $ # Access the web app in browser: http://127.0.0.1:8000
 ```
 
 Note : For login you have to add google oauth credentials. Visit the [Google API Console](https://console.developers.google.com/) to obtain OAuth 2.0 credentials - client ID and client secret and configure them in admin page as explained in this [tutorial](https://wsvincent.com/django-allauth-tutorial-custom-user-model/).
-For more info on what else you can do with django-allauth library you ca visit https://django-allauth.readthedocs.io/
+For more info on what else you can do with django-allauth library you can visit https://django-allauth.readthedocs.io/
 
 ## What's next ?
 - [x] Basic Slam Book app
