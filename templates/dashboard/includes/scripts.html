@@ -16,6 +16,15 @@
 <!-- Sidebar JS-->
 <script src="{% static 'dashboard/js/sidebar.js' %}"></script>
 
+<script>
+  function auto_grow(element) {
+    element.style.height = "330px";
+    element.style.height = (element.scrollHeight)+"px";
+    element.parentElement.style.height = (element.scrollHeight+30)+"px";
+    (element.parentElement).parentElement.style.height = (element.scrollHeight+60)+"px";
+}
+</script>
+
 {% if is_senior %}
 <script type="text/javascript">
 let pages = [
@@ -173,11 +182,9 @@ Inspired by Florin Pop's coding challenges, you can check them here: https://www
 
 // Pages and their content
 let pages = [
-    {id: 1, text: "<h3>PAGE 1</h3> <p>Lorem ipsum dolor sit</p>", active: true},
-    {id: 2, text: "<h3>PAGE 2</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti id impedit natus at! Necessitatibus voluptatem rerum repellat adipisci molestiae totam.</p>", active: false},
-    {id: 3, text: "<h3>PAGE 3</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti id impedit natus at! Necessitatibus voluptatem rerum repellat adipisci molestiae totam.</p>", active: false},
-    {id: 4, text: "<h3>PAGE 4</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti id impedit natus at! Necessitatibus voluptatem rerum repellat adipisci molestiae totam.</p>", active: false},
-    {id: 5, text: "<h3>PAGE 5</h3> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti id impedit natus at! Necessitatibus voluptatem rerum repellat adipisci molestiae totam.</p>", active: false}
+    {id: 1, text: "<h3>PAGE 1</h3> <p>Banda Sh has been dating bandi V for the last four years and third wheel S has always prayed to separate the love birds. S often romanticizes about V and goes to a lapdancer, C to quench his thirst of romance and love. C tries to help S move on with his moves but fails every single time. Guess moving on isn't easy. S now decides to learn guitar to impress V, so he visits A, a man born with a guitar in his hand, to learn to play the guitar; but this reminds him of V's love for shayaris. S now moves to a Sharma ji, the diljala shayar to learn shayaris but poor S fails miserably and decides to settle for his lapdancer, C. Meanwhile, the banda Sh finds out V is cheating on him with two guys. Sh files a case against V and appoints the best advocate in the city AR, a man of impeccable logic and evidences. AR, being a man of principles, refuses to take this case up because A knows Sh is already dating the famous film director, KJo, who is called Pam by Sh. Meanwhile, V moves on a double date with her side chicks, H, the CEO of company G and AK, the CEO of company M; only to realise AK is already dating the biggest singer of all time and is not of V's type. So, V finally settles for H and teaches him everything from Sharma ji's shayaris to rolling plants. H has now become a pro and decides to break up with V because he believes V is not that good in rolling plants anymore. A has been playing guitar all this time, much like those three men playing violins in titanic. What's a story without some background music? Miss P who is reading all this gets irritated by the writer's stupid imagination. She snatches away A's guitar and kills the writer. The writer would meet you in heaven. Later! Oh wait, maybe the writer would go to hell for this.</p> ", active: true},
+    {id: 2, text: "<h3>PAGE 2</h3> <p>Confused?</p><p> You won't be any more when we introduce all the characters.</p><p>Featuring...<br></p> <div class=\"container \" id=\"avatar_container\"> <div class=\"row row-cols-2\"> {% for senior in seniors %} <div class=\"col \"> <img src=\"{{senior.avatar_standing}}\" /><br> <p style=\"text-align: center\"> {{senior.name}} as {{senior.story_name}} </p> <br> </div>{% endfor %} </div></div>", active: false},
+    {id: 3, text: "<h3>PAGE 3</h3> <p>When life gives you lemon, Chuck it to China's face and make out your best efforts to pay a tribute to your seniors with whom you witnessed various tomfoolery of your college life. I know, a little less of the time we got to spend with them and know them as \"virtual life\" kicked in our lives from past some months. Rules were laid to avoid outings and parties, however no rules were ever laid on creativity. So kudos to our team for generating all those great big small ideas and let's close our eyes, sit back and relax and dive in to cherish those lives a little who helped us grow, survive and strive in college. All that you have to do is shake your mind until the best memory peeps out. Write down every memory that you have wished to recreate or cherish with them when in college. Let them know it's not just them , it's hard for us too to leave them . Let us make our small effort to make our position fixed in a corner of their heart😉❤️</p>", active: false},
   ];
   
   // UI Elements
