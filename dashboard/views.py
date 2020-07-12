@@ -28,6 +28,7 @@ def hiddenAdminPageView(request):
 
 @login_required
 def userPageView(request):
+    print(request.user)
     if (senior_users.objects.filter(email=request.user.email).exists()):
         return render(request, 'dashboard/user.html', context={"is_senior":True}) 
     return render(request, 'dashboard/user.html', context={"is_senior":False}) 
