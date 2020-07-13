@@ -28,10 +28,14 @@ def hiddenAdminPageView(request):
 
 @login_required
 def userPageView(request):
+    slams_filled = tableThree.objects.filter(junior=request.user.email).count()
+    print("slams_filled: ", slams_filled)
     print(request.user)
     if (senior_users.objects.filter(email=request.user.email).exists()):
-        return render(request, 'dashboard/user.html', context={"is_senior":True}) 
-    return render(request, 'dashboard/user.html', context={"is_senior":False}) 
+        # slams_received = tableThree.objects.filter(senior = request.user).count()
+        # print("slams_received: ", slams_received)
+        return render(request, 'dashboard/user.html', context={"is_senior":True, "slams_filled":slams_filled}) 
+    return render(request, 'dashboard/user.html', context={"is_senior":False, "slams_filled":slams_filled}) 
 
 def letterPageView(request):
     seniors = senior_users.objects.all()
