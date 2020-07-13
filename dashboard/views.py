@@ -32,9 +32,9 @@ def userPageView(request):
     print("slams_filled: ", slams_filled)
     print(request.user)
     if (senior_users.objects.filter(email=request.user.email).exists()):
-        # slams_received = tableThree.objects.filter(senior = request.user).count()
-        # print("slams_received: ", slams_received)
-        return render(request, 'dashboard/user.html', context={"is_senior":True, "slams_filled":slams_filled}) 
+        slams_received = tableThree.objects.filter(senior__email = request.user.email).count()
+        print("slams_received: ", slams_received)
+        return render(request, 'dashboard/user.html', context={"is_senior":True, "slams_filled":slams_filled, "slams_received": slams_received}) 
     return render(request, 'dashboard/user.html', context={"is_senior":False, "slams_filled":slams_filled}) 
 
 def letterPageView(request):
