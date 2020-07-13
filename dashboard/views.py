@@ -90,7 +90,9 @@ def fillSlambook_PageView(request,pk):
                 ans12=form.cleaned_data['ans12'],
                 ans13=form.cleaned_data['ans13'],
                 ans14=form.cleaned_data['ans14'],
-                ans15=form.cleaned_data['ans15']
+                ans15=form.cleaned_data['ans15'],
+                ghissu_meter = form.cleaned_data['ghissu_meter'],
+                phodu_meter = form.cleaned_data['phodu_meter']
             )
             obj.save()
             print("data saved")

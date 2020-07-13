@@ -68,7 +68,13 @@
                 <h5><img src="https://img.icons8.com/plasticine/50/000000/paper-plane.png"/><br>Filled <br><small>{{slams_filled}}</small></h5>
               </div>
               <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                <h5><img src="https://img.icons8.com/plasticine/50/000000/paper-plane.png" style="transform: scaleY(-1) scaleX(-1);"/><br>Received <br><small>{{slams_received}}</small></h5>
+                <h5><img src="https://img.icons8.com/plasticine/50/000000/paper-plane.png" style="transform: scaleY(-1) scaleX(-1);"/><br>Received <br><small>
+                  {% if is_senior %}
+                  {{slams_received}}
+                  {% else %}
+                  wait for your farewell! <img src="https://img.icons8.com/metro/15/000000/wink.png"/>
+                  {% endif %}
+                </small></h5>
               </div>
             </div>
           </div>

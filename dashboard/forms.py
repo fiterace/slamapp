@@ -3,8 +3,8 @@ from django.core import validators
 
 class fillSlambook(forms.Form):
     # Your Questions Goes inside labels
-    ghissu_meter = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'min': '0', 'max': '10', 'class':"slider", 'id':"myRange"}), required=False, label="Ghissu Meter")
-    phodu_meter = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'min': '0', 'max': '10', 'class':"slider2", 'id':"myRange2"}), required=False, label="Phodu Meter")
+    ghissu_meter = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'min': '0', 'max': '10', 'class':"slider", 'id':"myRange", 'value':'5'}), required=False, label="Ghissu Meter")
+    phodu_meter = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'min': '0', 'max': '10', 'class':"slider2", 'id':"myRange2", 'value':'5'}), required=False, label="Phodu Meter")
     ans1 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 1 goes here", required=False)
     ans2 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 2 goes here", required=False)
     ans3 = forms.CharField(widget=forms.Textarea(attrs={}), label="question 3 goes here", required=False)
