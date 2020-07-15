@@ -4,6 +4,8 @@ from django.db import models
 class tableThree(models.Model):
     senior = models.ForeignKey('dashboard.senior_users', related_name='entries',on_delete=models.CASCADE)
     junior = models.CharField(max_length=264)
+    ghissu_meter = models.IntegerField(default=0)
+    phodu_meter = models.IntegerField(default=0)
     ans1 = models.TextField(max_length=1000)
     ans2 = models.TextField(max_length=1000)
     ans3 = models.TextField(max_length=1000)

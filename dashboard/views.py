@@ -21,11 +21,21 @@ def dashboardPageView(request):
 def basePageView(request):
     return render(request, 'dashboard/layouts/base.html', context = {})
 
+def hiddenAdminPageView(request):
+    if request.user.is_authenticated:
+        return redirect(settings.LOGIN_REDIRECT_URL) 
+    return render(request, 'hiddenAdmin.html', context={})
+
 @login_required
 def userPageView(request):
+    slams_filled = tableThree.objects.filter(junior=request.user.email).count()
+    print("slams_filled: ", slams_filled)
+    print(request.user)
     if (senior_users.objects.filter(email=request.user.email).exists()):
-        return render(request, 'dashboard/user.html', context={"is_senior":True}) 
-    return render(request, 'dashboard/user.html', context={"is_senior":False}) 
+        slams_received = tableThree.objects.filter(senior__email = request.user.email).count()
+        print("slams_received: ", slams_received)
+        return render(request, 'dashboard/user.html', context={"is_senior":True, "slams_filled":slams_filled, "slams_received": slams_received}) 
+    return render(request, 'dashboard/user.html', context={"is_senior":False, "slams_filled":slams_filled}) 
 
 def letterPageView(request):
     seniors = senior_users.objects.all()
@@ -53,18 +63,19 @@ def letterPageView(request):
 #     return render(request, 'dashboard/show_slambook_entry.html', {'slam':slam})
 
  # naman's work
-def fillSlambook_PageView(request):
+@login_required()
+def fillSlambook_PageView(request,pk):
     form = forms.fillSlambook()
     if request.method == 'POST':
         form = forms.fillSlambook(request.POST)
 
         if form.is_valid():
             print("all good")
-            junior=request.user.email # must be taken from login
-            senior="naman" # must be taken from login
+            senior=senior_users.objects.filter(id=pk)
+            junior=request.user.email
             obj = tableThree(
                 junior=junior,
-                senior=senior,
+                senior=senior[0],
                 ans1=form.cleaned_data['ans1'],
                 ans2=form.cleaned_data['ans2'],
                 ans3=form.cleaned_data['ans3'],
@@ -79,7 +90,9 @@ def fillSlambook_PageView(request):
                 ans12=form.cleaned_data['ans12'],
                 ans13=form.cleaned_data['ans13'],
                 ans14=form.cleaned_data['ans14'],
-                ans15=form.cleaned_data['ans15']
+                ans15=form.cleaned_data['ans15'],
+                ghissu_meter = form.cleaned_data['ghissu_meter'],
+                phodu_meter = form.cleaned_data['phodu_meter']
             )
             obj.save()
             print("data saved")
@@ -89,10 +102,9 @@ def fillSlambook_PageView(request):
 
 class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'
-    # print("hello")
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#f2aaaa", "#dbc6eb", "#bbf1cb", "#abc2e8", "b4f2e1"] 
-    queryset = list(zip(senior_users.objects.all(), colors))
-    context_object_name = 'zip'
+    queryset = senior_users.objects.all()
+    context_object_name = 'seniors'
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
     def get_context_data(self, **kwargs):
@@ -106,8 +118,8 @@ class showSlambooksAll(LoginRequiredMixin,ListView):
 class showSlambooksMyListView(LoginRequiredMixin,ListView, UserPassesTestMixin):
     template_name='dashboard/showSlamBooks_my.html'
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
-    queryset = list(zip(tableThree.objects.all(), colors))
-    context_object_name = 'zip'
+    queryset = tableThree.objects.all()
+    context_object_name = 'tableThree'
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
     def get_context_data(self, **kwargs):
@@ -129,4 +141,3 @@ class showSlambookMyDetailView(LoginRequiredMixin,DetailView):
         # Add in a QuerySet of all the books
         context['is_senior'] = senior_users.objects.filter(email=self.request.user.email).exists()
         return context
-
