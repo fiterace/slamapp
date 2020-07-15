@@ -58,12 +58,12 @@
 {% block content %}
   <br>
   <ol class="articles" style="padding-inline-start: 20px;">
-        {% for entry, color in zip %}
+        {% for entry in tableThree %}
 
           {% if user.email == entry.senior.email %}
             <li class="articles__article" style="--animation-order:1">
               <a href="{% url 'myapp:showentry' pk=entry.pk %}" class="articles__link">
-                <div class="articles__content articles__content--lhs" style="background-color: {{color}};">
+                <div class="articles__content articles__content--lhs" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
                   -webkit-line-clamp: 5; /* number of lines to show */
                   -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>
@@ -77,7 +77,7 @@
                     <time>1 Jan 2020</time>
                   </div> -->
                 </div>
-                <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {{color}};">
+                <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
                   -webkit-line-clamp: 5; /* number of lines to show */
                   -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>

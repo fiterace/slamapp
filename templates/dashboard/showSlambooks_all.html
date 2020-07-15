@@ -12,11 +12,11 @@
   {% block content %}
   <br>
   <ol class="articles" style="padding-inline-start: 20px;">
-        {% for senior, color in zip %}
+        {% for senior in seniors %}
 
           <li class="articles__article" style="--animation-order:1">
             <a href="{% url 'myapp:fillSlambook' pk=senior.pk %}" class="articles__link">
-              <div class="articles__content articles__content--lhs" style="background-color: {{color}};">
+              <div class="articles__content articles__content--lhs" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                 <h2 class="articles__title" style="margin-bottom: 0px;">{{senior.name}}'s Slam</h2>
                 <p style="margin-bottom: 0px; text-align: right; font-size: 20px;">{{senior.nick_name}}</p>
                 <img src={{senior.avatar}} style="position: relative; left: -20px;" />
@@ -25,7 +25,7 @@
                   <time>1 Jan 2020</time>
                 </div> -->
               </div>
-              <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {{color}};">
+              <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                 <h2 class="articles__title" style="margin-bottom: 0px;">{{senior.name}}'s Slam</h2>
                 <p style="margin-bottom: 0px; text-align: right; font-size: 20px;">{{senior.nick_name}}</p>
                 <img src={{senior.avatar}} style="position: relative; left: -20px;"/>
