@@ -95,10 +95,11 @@ def fillSlambook_PageView(request,pk):
                 phodu_meter = form.cleaned_data['phodu_meter']
             )
             obj.save()
+            return redirect('myapp:showSlambooks_all')
             print("data saved")
     if (senior_users.objects.filter(email=request.user.email).exists()):
-        return render(request,'dashboard/fillSlambook.html',{'form':form, "is_senior":True})
-    return render(request,'dashboard/fillSlambook.html',{'form':form, "is_senior":False})
+        return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":True})
+    return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":False})
 
 class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'
