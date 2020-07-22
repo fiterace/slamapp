@@ -5,6 +5,7 @@ from django.views.generic import View,TemplateView,ListView,DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.conf import settings
+from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -60,10 +61,9 @@ def letterPageView(request):
  # naman's work
 @login_required()
 def fillSlambook_PageView(request,pk):
-    form = forms.fillSlambook()
+    form = forms.fillSlambook
     if request.method == 'POST':
         form = forms.fillSlambook(request.POST)
-
         if form.is_valid():
             print("all good")
             senior=senior_users.objects.filter(id=pk)
@@ -89,6 +89,7 @@ def fillSlambook_PageView(request,pk):
             )
             obj.save()
             print("data saved")
+    print("form function")
     if (senior_users.objects.filter(email=request.user.email).exists()):
         return render(request,'dashboard/fillSlambook.html',{'form':form, "is_senior":True})
     return render(request,'dashboard/fillSlambook.html',{'form':form, "is_senior":False})
@@ -108,11 +109,12 @@ class showSlambooksAll(LoginRequiredMixin,ListView):
         return context
 
 
-class showSlambooksMyListView(LoginRequiredMixin,ListView, UserPassesTestMixin):
+class showSlambooksMyListView(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlambooks_my.html'
     colors = ["#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6", "#CFD0FF", "#FFF3C3", "#FECCCB", "#A3E9C6", "#a6dcef", "#9aceff", "#a7e9af", "#a0ffe6", "#d5fffd", "#ffa5b0", "#f6def6"] 
     queryset = list(zip(tableThree.objects.all(), colors))
     context_object_name = 'zip'
+    print("called")
     # def test_func(self):
     #     return senior_users.objects.filter(email=request.user.email).exists()
     def get_context_data(self, **kwargs):
