@@ -4,8 +4,8 @@
 {% block title %} Fill Slams {% endblock title %}
 
 {% block stylesheets %}
-  <link href="static/dashboard/css/slam_card.css" rel="stylesheet" />
-  <link href="static/dashboard/css/style_border.css" rel="stylesheet"/>
+  <link href="{% static 'dashboard/css/slam_card.css' %}" rel="stylesheet" />
+  <link href="{% static 'dashboard/css/style_border.css' %}" rel="stylesheet"/>
 {% endblock stylesheets %}
 
 {% block sidebar %}
@@ -66,11 +66,11 @@
                 <div class="articles__content articles__content--lhs" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
                   -webkit-line-clamp: 5; /* number of lines to show */
-                  -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>
+                  -webkit-box-orient: vertical;"><i><img src="{% static 'dashboard/img/quote_left.png' %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static 'dashboard/img/quote_right.png' %}"  width="42" height="42" /></p>
                   <p style="margin-bottom: 0px; text-align: right; font-size: 20px;  white-space: nowrap; 
-                    width: 240px; 
-                    overflow: hidden;
-                    text-overflow: ellipsis; "> - {{entry.ans2}}</p>
+  width: 240px; 
+  overflow: hidden;
+  text-overflow: ellipsis; "> - {{entry.ans15}}</p>
                   <!-- <img src={{entry.senior.avatar}} style="position: relative; left: -20px;" /> -->
                   <!-- <div class="articles__footer">
                     <p>Cakes</p>
@@ -80,11 +80,11 @@
                 <div class="articles__content articles__content--rhs" aria-hidden="true" style="background-color: {% cycle '#CFD0FF' '#f6def6' '#a6dcef' '#FFF3C3' '#9aceff' '#a0ffe6' '#FECCCB' '#A3E9C6' %};">
                   <p class="articles__title" style="margin-bottom: 0px; text-overflow: ellipsis; overflow: hidden;  display: -webkit-box;
                   -webkit-line-clamp: 5; /* number of lines to show */
-                  -webkit-box-orient: vertical;"><i><img src="{% static "dashboard/img/quote_left.png" %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static "dashboard/img/quote_right.png" %}"  width="42" height="42" /></p>
+                  -webkit-box-orient: vertical;"><i><img src="{% static 'dashboard/img/quote_left.png' %}"  width="50" height="50" /></i> {{entry.ans1}} <img src="{% static 'dashboard/img/quote_right.png' %}"  width="42" height="42" /></p>
                   <p style="margin-bottom: 0px; text-align: right; font-size: 20px;  white-space: nowrap; 
-                    width: 240px; 
-                    overflow: hidden;
-                    text-overflow: ellipsis; "> - {{entry.ans2}}</p>
+  width: 240px; 
+  overflow: hidden;
+  text-overflow: ellipsis; "> - {{entry.ans15}}</p>
                   <!-- <img src={{entry.senior.avatar}} style="position: relative; left: -20px;"/> -->
                   <!-- <div class="articles__footer">
                     <p>Cakes</p>
