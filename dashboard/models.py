@@ -21,6 +21,7 @@ class tableThree(models.Model):
     ans13 = models.TextField(max_length=1000)
     ans14 = models.TextField(max_length=1000)
     ans15 = models.TextField(max_length=1000)
+    ans16 = models.TextField(max_length=1000, default = "silly ans")
 
 class senior_users(models.Model):
     email = models.CharField(max_length=200, default="b16000@students.iitmandi.ac.in")

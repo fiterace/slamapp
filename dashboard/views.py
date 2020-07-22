@@ -66,12 +66,11 @@ def letterPageView(request):
 @login_required()
 def fillSlambook_PageView(request,pk):
     form = forms.fillSlambook()
+    senior=senior_users.objects.filter(id=pk)
     if request.method == 'POST':
         form = forms.fillSlambook(request.POST)
-
         if form.is_valid():
             print("all good")
-            senior=senior_users.objects.filter(id=pk)
             junior=request.user.email
             obj = tableThree(
                 junior=junior,
@@ -91,6 +90,7 @@ def fillSlambook_PageView(request,pk):
                 ans13=form.cleaned_data['ans13'],
                 ans14=form.cleaned_data['ans14'],
                 ans15=form.cleaned_data['ans15'],
+                ans16=form.cleaned_data['ans16'],
                 ghissu_meter = form.cleaned_data['ghissu_meter'],
                 phodu_meter = form.cleaned_data['phodu_meter']
             )
@@ -98,8 +98,8 @@ def fillSlambook_PageView(request,pk):
             return redirect('myapp:showSlambooks_all')
             print("data saved")
     if (senior_users.objects.filter(email=request.user.email).exists()):
-        return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":True})
-    return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":False})
+        return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":True, "senior":senior[0]})
+    return render(request,'dashboard/fillSlambook.html', {'form':form, "is_senior":False, "senior":senior[0]})
 
 class showSlambooksAll(LoginRequiredMixin,ListView):
     template_name='dashboard/showSlamBooks_all.html'

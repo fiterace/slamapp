@@ -13,21 +13,24 @@
 {% block content %}
 <div class="row">
     <form method="post" class="row">
+        <div class="col px-auto">
+            <p class="h1" style="text-align: center; font-family: 'Fredoka One'; color: #66615B;">{{senior.name}}'s SLAM </p>
+        </div>
         <!-- this is same as an HTML form. Questions are label tags and answers are textArea tag -->
         {% csrf_token %}
         {% for field in form %}
             {% if field.field.widget.input_type == 'range' %}
             {% else %}
-                <div class="col-md-12 py-2">
+                <div class="col-md-12 py-4">
                     {{ field.errors }}
-                    <h5 class="question">{{ field.label_tag }}</h5>
+                    <h5 class="question px-4">{{ field.label_tag }}</h5>
                     <div class="paper">
                         <div class="paper-content">
                             {{ field }}
                         </div>
                     </div>
                 </div>
-                <br>
+                <br><br>
             {% endif %}
         {% endfor %}
         <div class="col-md-12 py-5 px-5">
