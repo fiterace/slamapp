@@ -3,6 +3,14 @@
 ## What is SlamApp ?
 SlamApp, the online version of slam book allows final students to carry memoirs of their stay in IIT Mandi. An app where seniors will have slams and everyone else (juniors/batchmates) can fill them out.
 
+![letter page](https://github.com/fiterace/slamapp/blob/master/screenshots/Screenshot%20(237).png)  
+<br/>
+![fill slams page](https://github.com/fiterace/slamapp/blob/master/screenshots/Screenshot%20(238).png)  
+<br/>
+![letter page](https://github.com/fiterace/slamapp/blob/master/screenshots/Screenshot%20(241).png)  
+<br/>
+![letter page](https://github.com/fiterace/slamapp/blob/master/screenshots/Screenshot%20(229).png)  
+
 ## How to deploy ?
 ```bash
 $ # Get the code
