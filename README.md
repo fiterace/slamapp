@@ -1,7 +1,7 @@
 # SlamApp
 
 ## What is SlamApp ?
-SlamApp, the online version of slam book allows final students to carry memoirs of their stay in IIT Mandi. An app where seniors will have slams and everyone else (juniors/batchmates) can fill them out.
+SlamApp, the online version of slam book allows final year students to carry memoirs of their stay in IIT Mandi. An app where seniors will have slams and everyone else (juniors/batchmates) can fill them out.
 
 ![letter page](https://github.com/fiterace/slamapp/blob/master/screenshots/Screenshot%20(237).png)  
 <br/>
