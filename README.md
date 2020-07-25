@@ -68,7 +68,7 @@ For more info on what else you can do with django-allauth library you can visit 
 - [ ] Add notification feature
 - [ ] Add invite link sending feature
 - [ ] `Add Memories` (image/video file) uploading feature
-- [ ] Add Slam Book `Download` feature ( A soft copy of Yaadein will be available for download after slambook filling period.)
+- [ ] Add Slam Book `Download` feature ( A soft copy of Slams will be available for download after slambook filling period.)
 - [ ] Add `Drop in Graffiti` feature (Feel like dropping a few words about someone? Drop in a GRAFFITI.)
 - [ ] Social Profile feature (User profiles can be filled, updated and browsed)
 - [ ] Public/Private option in profile (An option in 'Edit Profile' to make SLAMBOOK public or private according to your convenience. The default setting will be 'Public'.)
