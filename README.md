@@ -65,7 +65,7 @@ For more info on what else you can do with django-allauth library you can visit 
 ## What's next ?
 - [x] Basic Slam Book app
 - [ ] Add custom slambook creation `Create Slam` feature
-- [ ] Add notification feature
+- [ ] Add notification feature - 1.) show number of unread slams with bell (notification) icon. 2.) send a reminder mail of newly received slams after every fixed interval (say 1 week)
 - [ ] Add invite link sending feature
 - [ ] `Add Memories` (image/video file) uploading feature
 - [ ] Add Slam Book `Download` feature ( A soft copy of Slams will be available for download after slambook filling period.)
