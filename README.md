@@ -72,3 +72,4 @@ For more info on what else you can do with django-allauth library you can visit 
 - [ ] Add `Drop in Graffiti` feature (Feel like dropping a few words about someone? Drop in a GRAFFITI.)
 - [ ] Social Profile feature (User profiles can be filled, updated and browsed)
 - [ ] Public/Private option in profile (An option in 'Edit Profile' to make SLAMBOOK public or private according to your convenience. The default setting will be 'Public'.)
+- [ ] `Public Wall` - where anyone can share anything - be it story, photo or short kissa - on that wall for anyone in passing batch (batchmates can do it too...). There can be permission feature in which one can give permission to others to post about him on wall and delete if someones posts something he/she dosen't likes.
